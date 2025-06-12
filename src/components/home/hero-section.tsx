@@ -1,12 +1,11 @@
-'use client';
-import React from 'react';
-import Slider from 'react-slick';
+"use client";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-import Image from 'next/image';
-import Navbar from '../shared/navbar';
+import Image from "next/image";
+import Navbar from "../shared/navbar";
 
 const HeroSection = () => {
   const settings = {
@@ -21,8 +20,8 @@ const HeroSection = () => {
     pauseOnHover: false,
   };
 
-  const mobileImages = ['/assets/smalhero1.jpeg', '/assets/smalhero2.webp'];
-  const desktopImages = ['/assets/hero1.webp', '/assets/hero2.webp'];
+  const mobileImages = ["/assets/smalhero1.jpeg", "/assets/smalhero2.webp"];
+  const desktopImages = ["/assets/hero1.webp", "/assets/hero2.webp"];
 
   return (
     <div className="relative bg-white">
@@ -38,8 +37,8 @@ const HeroSection = () => {
               <Image
                 src={src}
                 alt={`Mobile Slide ${index + 1}`}
-                width={600}  
-                height={1000}  
+                width={600}
+                height={1000}
                 priority
                 className="w-full h-auto object-cover"
               />
