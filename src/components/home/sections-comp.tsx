@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import CustomButton from "../shared/common/custom-button";
-import { DropDownIcon, UserIcon } from "@/svgs/header-svg-grabber";
+import { ArrowIcon, DropDownIcon, UserIcon } from "@/svgs/header-svg-grabber";
 import ProductCard from "../shared/common/product-card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,8 +10,18 @@ import Container from "../shared/container";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { setIndex } from "@/redux-store/slices/toggle";
+import CustomLink from "../shared/common/custom-link";
+import { Products } from "@/data";
 
-const SectionComp = () => {
+interface SectionProps {
+  category?: string;
+  sectionTitle?: string;
+  bannerImage?: string;
+  bannerVideo ?: string,
+  moreStyle ?: string,
+}
+
+const SectionComp = ({ category, sectionTitle, bannerImage ,moreStyle  }: SectionProps) => {
   const sliderRef = useRef<any>(null);
   const slides = useSelector((state: any) => state.slider.startIndex);
   const dispatch = useDispatch();
@@ -31,89 +41,113 @@ const SectionComp = () => {
     ],
   };
 
-  const images = [
-    "/assets/eid1.webp",
-    "/assets/eid1.webp",
-    "/assets/eid1.webp",
-    "/assets/eid1.webp",
-    "/assets/eid1.webp",
-    "/assets/eid1.webp",
-    "/assets/eid1.webp",
-  ];
+  const filteredData = Products.filter((p) => p.category === category);
 
   return (
-    <div>
-      {/* top big  image div  */}
-      <div className="h-[560px] relative">
-        <Image
-          src={"/assets/festive.webp"}
-          alt={"festive"}
-          priority
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      <Container parentStyle="pl-5 bg-white !pr-0 py-10 bg-white text-black relative">
-        {/* Section title */}
-        <div className="flex md:items-center gap-4 flex-col md:flex-row justify-start md:justify-between md:mr-12">
-          <span className="text-xl">Eid Drop - 25</span>
-          <span className="group flex gap-2 cursor-pointer">
-            <CustomButton
-              btnText="View all"
-              AdditionalStyle="!normal-case !font-normal group-hover:border-b"
-            />
-            <DropDownIcon
-              stroke={3}
-              size={12}
-              className="-rotate-90 group-hover:bg-black group-hover:text-white bg-zinc-200 rounded-full p-1.5 h-6 w-6"
-            />
-          </span>
+    <div  >
+      {/* Top banner image */}
+      {bannerImage && (
+        <div className="h-[560px] 2xl:h-[800px] relative">
+          <Image
+            src={bannerImage}
+            alt={sectionTitle ?? "Section banner"}
+            priority
+            fill
+            className="object-cover"
+          />
         </div>
+      )}
 
-        {/* Slider */}
-        <div className="my-6 md:my-12 border">
-          <Slider
-            ref={sliderRef}
-            {...settings}
-            afterChange={(index) => dispatch(setIndex(index))}
-          >
-            {images.map((i, index) => (
-              <div key={index} className=" ">
-                <ProductCard img={i} />
-              </div>
-            ))}
-          </Slider>
-        </div>
 
-        <div className="relative   flex  items-center py-5">
-          {/* Custom Arrows div */}
-          <div className="w-full  *:h-fit border justify-around flex items-center gap-3 ">
+
+      {sectionTitle && (
+        <Container parentStyle={`pl-5 lg:pl-14 bg-white !pr-0 py-10 bg-white text-black relative ${moreStyle}`}>
+          {/* Section title */}
+          <div className="flex md:items-center gap-4 flex-col md:flex-row justify-start md:justify-between md:mr-12">
+            <span className="text-xl first-letter:uppercase">
+              {sectionTitle}
+            </span>
+
+            {/* view all btn  */}
+            <CustomLink to="#link">
+              <span className="group flex gap-2 cursor-pointer">
+                <CustomButton
+                  btnText="View all"
+                  AdditionalStyle="!normal-case !font-normal group-hover:border-b "
+                />
+                <DropDownIcon
+                  stroke={3}
+                  size={12}
+                  className="-rotate-90 group-hover:bg-black group-hover:text-white bg-zinc-200 rounded-full p-1.5 h-6 w-6"
+                />
+              </span>
+            </CustomLink>
+          </div>
+
+          {/* Slider */}
+          <div className="my-6 md:mt-12">
+            <Slider
+              ref={sliderRef}
+              {...settings}
+              afterChange={(index) => dispatch(setIndex(index))}
+            >
+              {filteredData.map((i, index) => (
+                <div key={index} className="">
+                  <ProductCard product={i} />
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          {/* Arrows */}
+          <div className="w-full relative *:h-fit justify-around flex items-center gap-3">
+            {/* progress bar  */}
             <div className="w-[80%] border"></div>
 
-            <div className="flex gap-3 items-center *:border *:rounded-full">
-              <CustomButton
-                disable={slides <= 0}
+            {/* arrow btns  */}
+            <div className="hidden md:flex gap-3 items-center *:border *:rounded-full ">
+              <button
+                disabled={slides <= 0}
                 onClick={() => sliderRef.current?.slickPrev()}
-                AdditionalStyle={`h-12 w-12 rotate-90 text-center ${
-                  slides <= 0 ? "bg-gray-300 cursor-not-allowed" : ""
+                className={`h-12 w-12 rotate-90 text-center flex justify-center items-center group ${
+                  slides <= 0
+                    ? "border-gray-400 text-gray-600 cursor-not-allowed"
+                    : " cursor-pointer"
                 }`}
-                icon={<DropDownIcon stroke={3} size={18} />}
-              />
-              <CustomButton
-                disable={slides >= images.length - 5.1}
+              >
+                <DropDownIcon
+                  stroke={3}
+                  size={18}
+                  className="group-hover:hidden"
+                />
+                <ArrowIcon
+                  size={18}
+                  className="rotate-90 hidden group-hover:flex"
+                />
+              </button>
+              <button
+                disabled={slides >= filteredData.length - visiableSlide}
                 onClick={() => sliderRef.current?.slickNext()}
-                AdditionalStyle={`h-12 w-12 -rotate-90 text-center ${
-                  slides >= images.length - 5.1
-                    ? "bg-gray-300 cursor-not-allowed"
-                    : ""
+                className={`h-12 w-12 -rotate-90 text-center flex justify-center items-center group ${
+                  slides >= filteredData.length - visiableSlide
+                    ? "border-gray-400 text-gray-600 cursor-not-allowed"
+                    : "cursor-pointer"
                 }`}
-                icon={<DropDownIcon stroke={3} size={18} />}
-              />
+              >
+                <DropDownIcon
+                  stroke={3}
+                  size={18}
+                  className="group-hover:hidden"
+                />
+                <ArrowIcon
+                  size={18}
+                  className="rotate-90 hidden group-hover:flex"
+                />
+              </button>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      )}
     </div>
   );
 };
