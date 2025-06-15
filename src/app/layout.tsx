@@ -35,6 +35,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable}  ${geistMono.variable} ${mulish.variable} antialiased`}
       >
+         {/* Include Optima Nova from CDN */}
+        <link
+          href="https://fonts.cdnfonts.com/css/optima-nova-lt-pro"
+          rel="stylesheet"
+        />
         <ReduxProvider>
 
         {children}

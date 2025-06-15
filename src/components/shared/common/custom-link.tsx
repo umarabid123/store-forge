@@ -10,7 +10,6 @@ interface linkProps {
 const CustomLink: React.FC<linkProps> = ({ children , to , styles }) => {
   return (
     <Link href={to} className={`cursor-pointer ${styles}`}>
-      {" "}
       {children}
     </Link>
   );

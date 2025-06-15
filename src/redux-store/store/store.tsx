@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import sliderSlice from "@/redux-store/slices/toggle"
+import ToggleArrow from "@/redux-store/slices/toggle-arrow"
 
 
 const store = configureStore({
   reducer: {
-    slider: sliderSlice
+    slider: ToggleArrow
   } // Add your reducers here
 });
 

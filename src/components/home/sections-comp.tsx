@@ -9,19 +9,21 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from "../shared/container";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import { setIndex } from "@/redux-store/slices/toggle";
+import { setIndex } from "@/redux-store/slices/toggle-arrow";
 import CustomLink from "../shared/common/custom-link";
 import { Products } from "@/data";
 
 interface SectionProps {
   category?: string;
   sectionTitle?: string;
-  bannerImage?: string;
+  bannerImage1?: string;
+  bannerImage2?: string;
   bannerVideo ?: string,
   moreStyle ?: string,
+  iconStyle ?: string
 }
 
-const SectionComp = ({ category, sectionTitle, bannerImage ,moreStyle  }: SectionProps) => {
+const SectionComp = ({ category, sectionTitle, bannerImage1, bannerImage2 ,moreStyle , iconStyle  }: SectionProps) => {
   const sliderRef = useRef<any>(null);
   const slides = useSelector((state: any) => state.slider.startIndex);
   const dispatch = useDispatch();
@@ -46,14 +48,25 @@ const SectionComp = ({ category, sectionTitle, bannerImage ,moreStyle  }: Sectio
   return (
     <div  >
       {/* Top banner image */}
-      {bannerImage && (
+      {bannerImage1 && (
         <div className="h-[560px] 2xl:h-[800px] relative">
           <Image
-            src={bannerImage}
+            src={bannerImage1}
             alt={sectionTitle ?? "Section banner"}
             priority
-            fill
-            className="object-cover"
+            height={1000}
+            width={2000}
+            // fill
+            className="hidden md:flex object-cover h-full w-full"
+          />
+          <Image
+            src={bannerImage2 ?? ""}
+            alt={sectionTitle ?? "Section banner"}
+            priority
+            height={1000}
+            width={2000}
+            // fill
+            className="md:hidden  object-cover h-full w-full"
           />
         </div>
       )}
@@ -62,9 +75,10 @@ const SectionComp = ({ category, sectionTitle, bannerImage ,moreStyle  }: Sectio
 
       {sectionTitle && (
         <Container parentStyle={`pl-5 lg:pl-14 bg-white !pr-0 py-10 bg-white text-black relative ${moreStyle}`}>
+         
           {/* Section title */}
           <div className="flex md:items-center gap-4 flex-col md:flex-row justify-start md:justify-between md:mr-12">
-            <span className="text-xl first-letter:uppercase">
+            <span className="text-xl font-optimanova first-letter:uppercase">
               {sectionTitle}
             </span>
 
@@ -78,7 +92,7 @@ const SectionComp = ({ category, sectionTitle, bannerImage ,moreStyle  }: Sectio
                 <DropDownIcon
                   stroke={3}
                   size={12}
-                  className="-rotate-90 group-hover:bg-black group-hover:text-white bg-zinc-200 rounded-full p-1.5 h-6 w-6"
+                  className={`-rotate-90 group-hover:bg-black group-hover:text-white bg-zinc-200 rounded-full p-1.5 h-6 w-6 ${iconStyle}`}
                 />
               </span>
             </CustomLink>
