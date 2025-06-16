@@ -1,4 +1,47 @@
+<<<<<<< ahmad-raza
+import React from "react";
+
+const CloseIcon = ({size=24 , className=''}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M18 6 6 18" />
+    <path d="m6 6 12 12" />
+  </svg>
+);
+
+export default CloseIcon;
+
+
+export const ArrowIcon = ({ size = 24, className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
+);
+=======
 import React from 'react'
+>>>>>>> main
 
 export const MenuIcon = ({ size = 24, className = "" }) => (
   <svg
@@ -19,8 +62,11 @@ export const MenuIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+<<<<<<< ahmad-raza
+=======
 
 
+>>>>>>> main
 export const CartIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +86,11 @@ export const CartIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+<<<<<<< ahmad-raza
+=======
 
 
+>>>>>>> main
 export const UserIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +109,11 @@ export const UserIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+<<<<<<< ahmad-raza
+=======
 
 
+>>>>>>> main
 export const SearchIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -80,11 +132,15 @@ export const SearchIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+<<<<<<< ahmad-raza
+export const DropDownIcon = ({ size = 24, className = "", stroke = 3 }) => (
+=======
 
 
 
 
  export const DropDownIcon = ({ size = 24, className = "", stroke=3 }) => (
+>>>>>>> main
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
