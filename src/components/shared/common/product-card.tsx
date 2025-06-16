@@ -4,6 +4,7 @@ import CustomButton from "./custom-button";
 import { CartIcon } from "@/svgs/header-svg-grabber";
 import Link from "next/link";
 
+
  
 
 interface Card {
@@ -27,12 +28,15 @@ const ProductCard: React.FC<Card> = ({ product }) => {
 
           {/* show image on hover  */}
           <Image
+
             src={product.img2}
             alt={product.category}
+
             height={250}
             width={230}
             className="object-cover w-full absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           />
+
 
           {/*label +  discounts  */}
           <div className=" w-fit h-fit z-10 absolute inset-0 top-4 left-4 flex flex-col gap-2 text-xs text-white  font-semibold *:px-2 *:py-1 *:w-fit">
@@ -43,6 +47,7 @@ const ProductCard: React.FC<Card> = ({ product }) => {
         </Link>
 
         {/* cart + Quick show on small ss + hover on large  */}
+
         <div className="absolute bottom-4 right-4 ">
           <CustomButton
             btnText="+ Quick add"
@@ -50,6 +55,7 @@ const ProductCard: React.FC<Card> = ({ product }) => {
           />
           <CartIcon className="lg:hidden h-10 w-10 p-3 bg-white" />
         </div>
+
 
       </div>
 
@@ -63,6 +69,7 @@ const ProductCard: React.FC<Card> = ({ product }) => {
         <div className="flex flex-wrap justify-center gap-2 text-center text-sm font-extralight">
           <span className="text-red-500 ">Rs.{product.currentPrice.toFixed(2)} </span>
           <span className="line-through">Rs.{product.oldPrice.toFixed(2)}</span>
+
         </div>
       </div>
     </div>

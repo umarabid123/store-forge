@@ -1,4 +1,4 @@
-interface AllProps {
+ interface AllProps {
   id?: number;
   label?: string;
   discount?: string;
@@ -517,3 +517,4 @@ export const topHeaderSlider: AllProps[] = [
   },
   { id: 4, label: "CUSTOMER SUPPORT ( MON-SUN : 10 AM TO 1 AM)" },
 ];
+ 
