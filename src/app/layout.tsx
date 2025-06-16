@@ -40,6 +40,7 @@ export default function RootLayout({
           href="https://fonts.cdnfonts.com/css/optima-nova-lt-pro"
           rel="stylesheet"
         />
+
         <ReduxProvider>
 
         {children}

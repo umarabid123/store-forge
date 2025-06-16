@@ -1,13 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import CustomButton from "@/components/shared/common/custom-button";
+<<<<<<< ahmad-raza
 import CloseIcon, {
+=======
+import {
+>>>>>>> main
   CartIcon,
   DropDownIcon,
   MenuIcon,
   SearchIcon,
   UserIcon,
 } from "@/svgs/header-svg-grabber";
+<<<<<<< ahmad-raza
 import { useSelector, useDispatch } from "react-redux";
 import {
   Collection,
@@ -108,6 +113,31 @@ const Navbar = () => {
         <span onClick={() => dispatch(MenubarItems())}>
           <MenuIcon />
         </span>
+=======
+
+const Navbar = () => {
+  const navElements = [
+    {
+      id: 1,
+      label: "collections",
+      icon: <DropDownIcon size={16} className=" " />,
+    },
+    {
+      id: 2,
+      label: "accessories",
+      icon: <DropDownIcon size={16} className=" " />,
+    },
+    { id: 3, label: "father's day deals" },
+    { id: 4, label: "clearance sale" },
+  ];
+
+  return (
+    <div className="py-7 px-2 sm:px-8 md:px-10 lg:px-5  bg-transperant text-black flex items-center justify-between">
+     
+      {/* menu icons  */}
+      <div className="flex gap-2 lg:hidden">
+        <MenuIcon />
+>>>>>>> main
         <SearchIcon className=" md:hidden" />
       </div>
 
@@ -122,6 +152,7 @@ const Navbar = () => {
         />
       </div>
 
+<<<<<<< ahmad-raza
       {/* nav links for lg screens    */}
       <div className=" hidden lg:flex gap-5 ">
         {/* 1 */}
@@ -354,6 +385,16 @@ const Navbar = () => {
           </div>
         </div>
       )}
+=======
+      {/* nav elements  */}
+      <div className=" hidden lg:flex gap-5 lg:pr-">
+        {navElements.map((i) => (
+          <div key={i.id} className="">
+            <CustomButton btnText={i.label} icon={i.icon} />
+          </div>
+        ))}
+      </div>
+>>>>>>> main
 
       {/* icons part  */}
       <div className="  flex items-center gap-4">
