@@ -21,7 +21,7 @@ const TopHeaderSlider = () => {
 };
 
   return (
-    <div className="h-14 flex items-center  overflow-hidden border bg-white">
+    <div className="h-14 flex items-center  overflow-hidden bg-white">
       <Slider {...settings}>
         {topHeaderSlider.map((item, index) => (
           <div

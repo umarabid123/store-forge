@@ -39,7 +39,7 @@ const page = () => {
         </div>
         {/* title-slider  */}
         <div>
-          <TitleSlider />
+          <TitleSlider title="live sharp | Look smart"/>
         </div>
 
         <SectionComp

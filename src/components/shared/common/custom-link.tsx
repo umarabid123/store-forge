@@ -5,11 +5,12 @@ interface linkProps {
   children: ReactNode;
   to : string;
   styles ?: string;
+  click ?: () => void;
 }
 
-const CustomLink: React.FC<linkProps> = ({ children , to , styles }) => {
+const CustomLink: React.FC<linkProps> = ({ children , to , styles ,click}) => {
   return (
-    <Link href={to} className={`cursor-pointer ${styles}`}>
+    <Link href={to} onClick={click} className={`cursor-pointer ${styles}`}>
       {children}
     </Link>
   );
