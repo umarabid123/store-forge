@@ -13,7 +13,7 @@ const page = () => {
       <div className="bg-[url('/assets/casual1.webp')] bg-cover bg-center  text-white ">
         <div className="bg-black/80 p-8 md:p-12">
           <BottomPageQoute
-            text="Casual Coat For Men | Men's Casual Blazers"
+            text="Casual Coat For Men | Men&#39;s Casual Blazers"
             qouteStyle="!mb-2 text-white"
           />
           <p className="text-center text-2xl font-optimanova tracking-wider font-semibold my-4">

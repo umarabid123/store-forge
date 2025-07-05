@@ -16,6 +16,7 @@ const ProductCard: React.FC<Card> = ({ product, addStyle }) => {
     <div className={`mr-5 font-mulish ${addStyle}`}>
       <div className=" relative group cursor-pointer ">
         {/* card images  */}
+        {/* card images  */}
         <Link href={"#details"} className="">
           <Image
             src={product.img1 ?? ""}
@@ -41,14 +42,15 @@ const ProductCard: React.FC<Card> = ({ product, addStyle }) => {
             )}
 
             {product.discount && (
-              <span className="bg-redText first-letter:uppercase">
-                save {product.discount}
-              </span>
+                <span className="bg-redText first-letter:uppercase">
+                  save {product.discount}
+                </span>
             )}
           </div>
         </Link>
 
         {/* cart + Quick show on small ss + hover on large  */}
+
 
         <div className="absolute bottom-4 right-4 ">
           <CustomButton
@@ -66,6 +68,7 @@ const ProductCard: React.FC<Card> = ({ product, addStyle }) => {
             {product.title}
           </p>
         </Link>
+
 
         <div className="flex flex-wrap justify-center gap-2 text-center text-md font-extralight">
           {product.discount ? (
