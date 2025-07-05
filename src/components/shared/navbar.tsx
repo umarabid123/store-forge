@@ -147,41 +147,26 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
         </span>
       </div>
 
-      {/* logo   */}
-      <CustomLink to="/" styles="py-2">
-        {pathname === "/" ? (
-          <Image
-            src={"/logo.svg"}
-            alt="forge"
-            height={110}
-            width={210}
-            className="w-44 sm:h-12 sm:w-54 "
-          />
-        ) : (
-          <Image
-            src={"/logo-white.avif"}
-            alt="forge"
-            height={190}
-            width={110}
-            className="h-7 w-44 sm:w-54"
-          />
-        )}
-      </CustomLink>
-
- 
-        <SearchIcon className=" md:hidden" />
-      </div>
-
-      {/* logo   */}
-      <div className="w-44 sm:h-12 sm:w-54 ">
-        <Image
-          src={"./logo.svg"}
-          alt="forge"
-          height={110}
-          width={210}
-          className="h-full w-full"
-        />
-      </div>
+{/* logo   */}
+<CustomLink to="/" styles="py-2">
+  {pathname === "/" ? (
+    <Image
+      src={"/logo.svg"}
+      alt="forge"
+      height={110}
+      width={210}
+      className="w-44 sm:h-12 sm:w-54 "
+    />
+  ) : (
+    <Image
+      src={"/logo-white.avif"}
+      alt="forge"
+      height={190}
+      width={110}
+      className="h-7 w-44 sm:w-54"
+    />
+  )}
+</CustomLink>
 
  
       {/* nav links for lg screens    */}
