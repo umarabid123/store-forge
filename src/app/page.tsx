@@ -39,7 +39,9 @@ const page = () => {
         </div>
         {/* title-slider  */}
         <div>
+ 
           <TitleSlider title="live sharp | Look smart"/>
+ 
         </div>
 
         <SectionComp
@@ -65,3 +67,4 @@ const page = () => {
 };
 
 export default page;
+ 

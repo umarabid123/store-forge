@@ -7,6 +7,7 @@ btnText ?: string,
 onClick ?: ()=>void,
 position ?: string,
 disable ?: boolean
+ 
 leftIcon ?: ReactNode
 }
 
@@ -17,6 +18,7 @@ const CustomButton:React.FC <BtnProps> = ({btnText ,leftIcon, icon , position,Ad
         {position === "left" && leftIcon}
         {btnText}
         {icon}
+ 
     </button>
   )
 }
