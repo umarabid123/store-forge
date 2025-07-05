@@ -1,17 +1,16 @@
 import React from "react";
 import { Products } from "@/data";
-import { useDispatch } from "react-redux";
 
 // import { Product } from "@/data"; // Make sure Product type is exported from your data file
+
 
 const SortProducts = ({
   setProducts,
   styles,
 }: {
-  setProducts: any;
+  setProducts: (products: typeof Products) => void;
   styles?: string;
 }) => {
-  const dispatch = useDispatch();
 
   const handleSort = (value: string) => {
     let sorted = [...Products]; // Always clone before sorting

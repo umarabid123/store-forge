@@ -20,11 +20,11 @@ const page = () => {
             SUITING
           </p>
           <p className="text-center font-mulish md:w-3/4 mx-auto text-base md:text-lg font-normal">
-            Wear Men's Formal Suits from Charcoal Suiting to get a classy look
+            Wear Mens Formal Suits from Charcoal Suiting to get a classy look
             at any occasion. Shop our designer suits for men, blazers, and
             prince coats which are made with finesse and craftsmanship. From
             Tailored suits to Custom suits, get the latest Tailor made
-            need-to-measure men’s suit in double-breasted, slim, and classic fit
+            need-to-measure mens suit in double-breasted, slim, and classic fit
             fittings. Free Shipping available for Pakistan. Cash on Delivery.
           </p>
         </div>

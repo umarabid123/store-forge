@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/shared/navbar";
+import Navbar from "@/components/shared/navbar/navbar";
 import Footer from "@/components/shared/footer";
 import TopHeaderSlider from "@/components/shared/top-header-slider";
 import OurBlogs from "@/components/shared/common/blogs";

@@ -3,36 +3,32 @@ import React from "react";
 import CustomButton from "./custom-button";
 import { CartIcon } from "@/svgs/header-svg-grabber";
 import Link from "next/link";
- 
- 
+import { Product } from "../types";
 
 interface Card {
-  product: any;
- 
+  product: Product;
+
   addStyle?: string;
 }
 
-const ProductCard: React.FC<Card> = ({ product , addStyle }) => {
+const ProductCard: React.FC<Card> = ({ product, addStyle }) => {
   return (
     <div className={`mr-5 font-mulish ${addStyle}`}>
       <div className=" relative group cursor-pointer ">
-       
-       {/* card images  */}
+        {/* card images  */}
         <Link href={"#details"} className="">
           <Image
-            src={product.img1 }
-            alt={product.category}
+            src={product.img1 ?? ""}
+            alt={product.category ?? "Product image"}
             height={400}
             width={400}
- 
             className="object-cover w-full transition-opacity duration-300 group-hover:opacity-0"
           />
 
           {/* show image on hover  */}
           <Image
- 
-            src={product.img2}
-            alt={product.category}
+            src={product.img2 ?? ""}
+            alt={product.category ?? "Product image"}
             height={400}
             width={400}
             className="object-cover w-full absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -45,15 +41,15 @@ const ProductCard: React.FC<Card> = ({ product , addStyle }) => {
             )}
 
             {product.discount && (
-            <span className="bg-redText first-letter:uppercase">save {product.discount}</span>
+              <span className="bg-redText first-letter:uppercase">
+                save {product.discount}
+              </span>
             )}
- 
           </div>
-
         </Link>
 
         {/* cart + Quick show on small ss + hover on large  */}
- 
+
         <div className="absolute bottom-4 right-4 ">
           <CustomButton
             btnText="+ Quick add"
@@ -61,8 +57,6 @@ const ProductCard: React.FC<Card> = ({ product , addStyle }) => {
           />
           <CartIcon className="lg:hidden h-10 w-10 p-3 bg-white" />
         </div>
-
- 
       </div>
 
       {/* title + current price + old Price  */}
@@ -72,18 +66,22 @@ const ProductCard: React.FC<Card> = ({ product , addStyle }) => {
             {product.title}
           </p>
         </Link>
- 
+
         <div className="flex flex-wrap justify-center gap-2 text-center text-md font-extralight">
           {product.discount ? (
             <>
-            <span className="text-red-500 ">Rs.{product.currentPrice.toFixed(2)} </span>
-          <span className="line-through">Rs.{product.oldPrice.toFixed(2)}</span>
-          </>
-          ): (
-            <span className="">Rs.{product.oldPrice.toFixed(2)}</span>
-
-          )} 
- 
+              <span className="text-red-500 ">
+                Rs.{product.currentPrice?.toFixed(2) ?? "0.00"}{" "}
+              </span>
+              <span className="line-through">
+                Rs.{product.oldPrice?.toFixed(2) ?? "0.00"}
+              </span>
+            </>
+          ) : (
+            <span className="">
+              Rs.{product.oldPrice?.toFixed(2) ?? "0.00"}
+            </span>
+          )}
         </div>
       </div>
     </div>

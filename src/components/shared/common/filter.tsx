@@ -1,16 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  toggleFilter,
   toggleFilterSection,
   setPriceRange,
 } from "@/redux-store/slices/filter-slice";
 import CloseIcon, { DropDownIcon } from "@/svgs/header-svg-grabber";
 import CustomButton from "./custom-button";
+import { RootState } from "@/components/shared/types";
 
 const Filter = ({ onToggle }: { onToggle: () => void }) => {
   const dispatch = useDispatch();
-  const sections = useSelector((state: any) => state.filter.sections);
+  // Define RootState type according to your redux store structure
+  const sections = useSelector((state: RootState) => state.filter.sections);
 
   const handleSectionToggle = (section: "sortBy" | "price" | "size") => {
     dispatch(toggleFilterSection(section));

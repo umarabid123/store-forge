@@ -16,7 +16,7 @@ const page = () => {
         <p className="text-center font-mulish md:w-3/4 mx-auto text-base md:text-lg font-normal">
           Wear beautifully Crafted Polo shirts to any casual or semi formal
           occasions. Our t-shirts are made with airy & skin friendly fabric
-          which is pleasing to touch. Browse Charcoal's latest Polo-shirts and
+          which is pleasing to touch. Browse Charcoals latest Polo-shirts and
           Tees in many colors and designs like white, black and many more
           <br />
           <br />

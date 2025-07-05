@@ -20,10 +20,10 @@ const page = () => {
             WAISTCOAT FOR MEN
           </p>
           <p className="text-center font-mulish md:w-3/4 mx-auto text-base md:text-lg font-normal">
-            Make your special day count by wearing an exclusively designed Men's
-            Waistcoat from our collection. Charcoal's waistcoats for men are the
+            Make your special day count by wearing an exclusively designed Mens
+            Waistcoat from our collection. Charcoals waistcoats for men are the
             perfect fit for any formal or casual occasion. Charcoal is one of
-            the leading brands in Men's Formal Waistcoats, kurtas and shalwar
+            the leading brands in Mens Formal Waistcoats, kurtas and shalwar
             Kameez. Our waistcoat designs includes double-breasted vests,
             tuxedo, traditional and modren suit vest in different colors like
             navy blue, black, grey, brown, beige, white, off-white, cream etc.
