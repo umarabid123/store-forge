@@ -1,4 +1,6 @@
+ 
 interface AllProps {
+ 
   id?: number;
   label?: string;
   discount?: string;
@@ -10,7 +12,7 @@ interface AllProps {
   img1?: string;
   img2?: string;
 }
-
+ 
 export const banners = [
     "/assets/banner1.webp",
     "/assets/banner2.webp",
@@ -25,6 +27,7 @@ export const Products: AllProps[] = [
     id: 1,
     label: "new",
     // discount: "30%",
+ 
     category: "eid-drop",
     slug: "checked-casual-shirt-navy",
     title: "Checked Casual Shirt Navy",
@@ -35,8 +38,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 2,
+ 
     // label: "hot",
     // discount: "25%",
+ 
     category: "eid-drop",
     slug: "embroidered-kurta-white",
     title: "Embroidered Kurta White",
@@ -47,7 +52,9 @@ export const Products: AllProps[] = [
   },
   {
     id: 3,
+ 
     label: "new",
+ 
     discount: "20%",
     category: "eid-drop",
     slug: "classic-shalwar-kameez-black",
@@ -71,7 +78,9 @@ export const Products: AllProps[] = [
   },
   {
     id: 5,
+ 
     // label: "hot",
+ 
     discount: "10%",
     category: "eid-drop",
     slug: "embroidered-shirt-green",
@@ -83,7 +92,9 @@ export const Products: AllProps[] = [
   },
   {
     id: 6,
+ 
     // label: "sale",
+ 
     discount: "18%",
     category: "eid-drop",
     slug: "casual-shirt-maroon",
@@ -107,7 +118,9 @@ export const Products: AllProps[] = [
   },
   {
     id: 8,
+ 
     // label: "hot",
+ 
     discount: "12%",
     category: "eid-drop",
     slug: "embroidered-kurta-pink",
@@ -122,7 +135,9 @@ export const Products: AllProps[] = [
   {
     id: 9,
     label: "new",
+ 
     // discount: "28%",
+ 
     category: "festive",
     slug: "festive-kurta-gold",
     title: "Festive Kurta Gold",
@@ -134,7 +149,9 @@ export const Products: AllProps[] = [
   {
     id: 10,
     label: "hot",
+ 
     // discount: "20%",
+ 
     category: "festive",
     slug: "embroidered-suit-red",
     title: "Embroidered Suit Red",
@@ -145,8 +162,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 11,
+ 
     // label: "sale",
     // discount: "18%",
+ 
     category: "festive",
     slug: "festive-shirt-blue",
     title: "Festive Shirt Blue",
@@ -158,7 +177,9 @@ export const Products: AllProps[] = [
   {
     id: 12,
     label: "new",
+ 
     // discount: "15%",
+ 
     category: "festive",
     slug: "embroidered-kurta-silver",
     title: "Embroidered Kurta Silver",
@@ -169,8 +190,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 13,
+ 
     // label: "hot",
     // discount: "12%",
+ 
     category: "festive",
     slug: "festive-suit-green",
     title: "Festive Suit Green",
@@ -181,8 +204,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 14,
+ 
     // label: "sale",
     // discount: "22%",
+ 
     category: "festive",
     slug: "embroidered-shirt-purple",
     title: "Embroidered Shirt Purple",
@@ -194,7 +219,9 @@ export const Products: AllProps[] = [
   {
     id: 15,
     label: "new",
+ 
     // discount: "25%",
+ 
     category: "festive",
     slug: "festive-kurta-orange",
     title: "Festive Kurta Orange",
@@ -205,8 +232,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 16,
+ 
     // label: "hot",
     // discount: "10%",
+ 
     category: "festive",
     slug: "embroidered-suit-blue",
     title: "Embroidered Suit Blue",
@@ -220,7 +249,9 @@ export const Products: AllProps[] = [
   {
     id: 17,
     label: "new",
+ 
     // discount: "18%",
+ 
     category: "perfumes",
     slug: "oudh-intense",
     title: "Oudh Intense",
@@ -231,8 +262,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 18,
+ 
     // label: "hot",
     // discount: "15%",
+ 
     category: "perfumes",
     slug: "rose-bliss",
     title: "Rose Bliss",
@@ -243,8 +276,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 19,
+ 
     // label: "sale",
     // discount: "20%",
+ 
     category: "perfumes",
     slug: "amber-musk",
     title: "Amber Musk",
@@ -256,7 +291,9 @@ export const Products: AllProps[] = [
   {
     id: 20,
     label: "new",
+ 
     // discount: "10%",
+ 
     category: "perfumes",
     slug: "citrus-breeze",
     title: "Citrus Breeze",
@@ -267,8 +304,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 21,
+ 
     // label: "hot",
     // discount: "12%",
+ 
     category: "perfumes",
     slug: "mystic-woods",
     title: "Mystic Woods",
@@ -280,7 +319,9 @@ export const Products: AllProps[] = [
   {
     id: 22,
     label: "sale",
+ 
     // discount: "25%",
+ 
     category: "perfumes",
     slug: "oriental-night",
     title: "Oriental Night",
@@ -292,7 +333,9 @@ export const Products: AllProps[] = [
   {
     id: 23,
     label: "new",
+ 
     // discount: "22%",
+ 
     category: "perfumes",
     slug: "floral-mist",
     title: "Floral Mist",
@@ -303,8 +346,10 @@ export const Products: AllProps[] = [
   },
   {
     id: 24,
+ 
     // label: "hot",
     // discount: "30%",
+ 
     category: "perfumes",
     slug: "spice-essence",
     title: "Spice Essence",
@@ -509,6 +554,7 @@ export const Products: AllProps[] = [
     img1: "/assets/suit1.webp",
     img2: "/assets/suit2.webp",
   },
+ 
     {
     id: 41,
     label: "sale",
@@ -618,6 +664,7 @@ export const Products: AllProps[] = [
     img2: "/assets/jac2.jpg",
   },
 
+ 
 ];
 
 export const topHeaderSlider: AllProps[] = [
@@ -634,3 +681,4 @@ export const topHeaderSlider: AllProps[] = [
   },
   { id: 4, label: "CUSTOMER SUPPORT ( MON-SUN : 10 AM TO 1 AM)" },
 ];
+ 

@@ -1,3 +1,4 @@
+ 
 import React from "react";
 
 const CloseIcon = ({size=24 , className=''}) => (
@@ -38,6 +39,7 @@ export const ArrowIcon = ({ size = 24, className = "" }) => (
     <path d="m12 5 7 7-7 7" />
   </svg>
 );
+ 
 
 export const MenuIcon = ({ size = 24, className = "" }) => (
   <svg
@@ -58,6 +60,7 @@ export const MenuIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+ 
 export const CartIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +80,7 @@ export const CartIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+ 
 export const UserIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -95,6 +99,7 @@ export const UserIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+ 
 export const SearchIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +118,9 @@ export const SearchIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+ 
 export const DropDownIcon = ({ size = 24, className = "", stroke = 3 }) => (
+ 
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
