@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const TopHeaderSlider = () => {
-  
+ 
   const settings = {
   infinite: true,
   speed: 7000, 
@@ -22,7 +22,8 @@ const TopHeaderSlider = () => {
  
 
   return (
-    <div className="h-14 flex items-center  overflow-hidden border bg-white">
+    <div className="h-14 flex items-center  overflow-hidden bg-white">
+ 
       <Slider {...settings}>
         {topHeaderSlider.map((item, index) => (
           <div
@@ -40,4 +41,6 @@ const TopHeaderSlider = () => {
   );
 };
 
+ 
 export default TopHeaderSlider;
+ 

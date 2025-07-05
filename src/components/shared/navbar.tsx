@@ -1,46 +1,57 @@
+ 
+"use client";
 import Image from "next/image";
 import React from "react";
 import CustomButton from "@/components/shared/common/custom-button";
-<<<<<<< ahmad-raza
 import CloseIcon, {
-=======
-import {
->>>>>>> main
+ 
   CartIcon,
   DropDownIcon,
   MenuIcon,
   SearchIcon,
   UserIcon,
 } from "@/svgs/header-svg-grabber";
-<<<<<<< ahmad-raza
+ 
 import { useSelector, useDispatch } from "react-redux";
 import {
   Collection,
   ToggleEvent,
   SubCollection,
   MenubarItems,
+ 
+  Search,
+  setQuery,
+  setResults,
 } from "@/redux-store/slices/toggle-arrow";
 import CustomLink from "./common/custom-link";
 import SocialLinks from "./common/social-links";
+import { usePathname } from "next/navigation";
+import path from "path";
 
-const Navbar = () => {
+const Navbar = ({ navParent }: { navParent?: string }) => {
   const menuitems = useSelector((state: any) => state.slider.menuBar);
   const store = useSelector((state: any) => state.slider.AccToggle);
   const collections = useSelector((state: any) => state.slider.colectionToggle);
+  const searchBar = useSelector((state: any) => state.slider.search);
   const subCollectionsItem = useSelector(
     (state: any) => state.slider.subCollection
   );
-  const dispatch = useDispatch();
+  const search = useSelector((state: any) => state.slider.search);
 
+  const dispatch = useDispatch();
+  const pathname = usePathname();
+ 
 
   const collectionsElements = [
     {
       label: "New Arrivals",
-      path: "/collections/new-arrivals",
+ 
+      path: "/collections/s12025",
     },
     {
       label: "Fragrances",
-      path: "/collections/fragrances",
+      path: "/collections/perfume-bodyworks",
+ 
     },
     {
       label: "Polo & Tees",
@@ -50,8 +61,14 @@ const Navbar = () => {
       label: "Shirts",
       icon: true,
       subCollection: [
-        { id: 1, label: "Casual Shirts", path: "/collections/casual" },
-        { id: 2, label: "Formal Shirts", path: "/collections/formal" },
+ 
+        { id: 1, label: "Casual Shirts", path: "/collections/casual-shirts" },
+        {
+          id: 2,
+          label: "Formal Shirts",
+          path: "/collections/semi-formal-full-sleeve-shirts",
+        },
+ 
       ],
     },
     {
@@ -60,14 +77,22 @@ const Navbar = () => {
     },
     {
       label: "Semi Formal Coats",
-      path: "/collections/semi-formal-coats",
+ 
+      path: "/collections/casual-coats",
+ 
     },
     {
       label: "Afroz",
       icon: true,
       subCollection: [
-        { id: 1, label: "Kurta Collection", path: "/collections/kurta" },
-        { id: 2, label: "Waistcoats", path: "/collections/waistcoats" },
+ 
+        {
+          id: 1,
+          label: "Kurta Collection",
+          path: "/collections/shalwar-kameez",
+        },
+        { id: 2, label: "Waistcoats", path: "/collections/waist-coats" },
+ 
       ],
     },
     {
@@ -76,7 +101,7 @@ const Navbar = () => {
       subCollection: [
         { id: 1, label: "Trousers", path: "/collections/trousers" },
         { id: 2, label: "Jeans", path: "/collections/jeans" },
-        { id: 3, label: "Shalwar", path: "/collections/shalwar" },
+ 
       ],
     },
     {
@@ -106,38 +131,44 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="py-7 px-2 sm:px-8 md:px-10 bg-transperant text-black flex items-center justify-between">
-     
+ 
+    <div
+      className={`py-7 px-2 sm:px-8 relative z-40 md:px-10 bg-transperant text-black flex items-center justify-between ${navParent}`}
+    >
+ 
       {/* menu icons shown on small screens */}
       <div className="flex gap-2 lg:hidden">
         <span onClick={() => dispatch(MenubarItems())}>
           <MenuIcon />
         </span>
-=======
+ 
+        <span onClick={() => dispatch(Search())}>
+          <SearchIcon className=" md:hidden" />
+        </span>
+      </div>
 
-const Navbar = () => {
-  const navElements = [
-    {
-      id: 1,
-      label: "collections",
-      icon: <DropDownIcon size={16} className=" " />,
-    },
-    {
-      id: 2,
-      label: "accessories",
-      icon: <DropDownIcon size={16} className=" " />,
-    },
-    { id: 3, label: "father's day deals" },
-    { id: 4, label: "clearance sale" },
-  ];
+      {/* logo   */}
+      <CustomLink to="/" styles="py-2">
+        {pathname === "/" ? (
+          <Image
+            src={"/logo.svg"}
+            alt="forge"
+            height={110}
+            width={210}
+            className="w-44 sm:h-12 sm:w-54 "
+          />
+        ) : (
+          <Image
+            src={"/logo-white.avif"}
+            alt="forge"
+            height={190}
+            width={110}
+            className="h-7 w-44 sm:w-54"
+          />
+        )}
+      </CustomLink>
 
-  return (
-    <div className="py-7 px-2 sm:px-8 md:px-10 lg:px-5  bg-transperant text-black flex items-center justify-between">
-     
-      {/* menu icons  */}
-      <div className="flex gap-2 lg:hidden">
-        <MenuIcon />
->>>>>>> main
+ 
         <SearchIcon className=" md:hidden" />
       </div>
 
@@ -152,7 +183,7 @@ const Navbar = () => {
         />
       </div>
 
-<<<<<<< ahmad-raza
+ 
       {/* nav links for lg screens    */}
       <div className=" hidden lg:flex gap-5 ">
         {/* 1 */}
@@ -168,7 +199,11 @@ const Navbar = () => {
           onClick={() => dispatch(ToggleEvent())}
         />
         {/* 3 */}
-        <CustomButton btnText={"clearance sale"} />
+ 
+        <CustomLink to="/collections/flash-sale">
+          <CustomButton btnText={"clearance sale"} />
+        </CustomLink>
+ 
       </div>
 
       {/* menbar for small screeens  */}
@@ -196,41 +231,48 @@ const Navbar = () => {
 
             <div className=" flex flex-col justify-between h-full pb-10">
               <div className="*:my-5">
-              {/* 1 */}
-              <CustomButton
-                btnText={"collections"}
-                icon={
-                  <DropDownIcon
-                    size={30}
-                    className="-rotate-90 bg-gray-300 p-2 rounded-full hover:bg-black hover:text-white"
-                  />
-                }
-                AdditionalStyle="!w-full !justify-between "
-                onClick={() => dispatch(Collection())}
-              />
-              {/* 2 */}
-              <CustomButton
-                btnText={"accessories"}
-                icon={
-                  <DropDownIcon
-                    size={30}
-                    className="-rotate-90 bg-gray-300 p-2 rounded-full hover:bg-black hover:text-white"
-                  />
-                }
-                AdditionalStyle="!w-full !justify-between "
-                onClick={() => dispatch(ToggleEvent())}
-              />
-              {/* 3 */}
-              <CustomButton btnText={"clearance sale"} />
-            </div>
+ 
+                {/* 1 */}
+                <CustomButton
+                  btnText={"collections"}
+                  icon={
+                    <DropDownIcon
+                      size={30}
+                      className="-rotate-90 bg-gray-300 p-2 rounded-full hover:bg-black hover:text-white"
+                    />
+                  }
+                  AdditionalStyle="!w-full !justify-between "
+                  onClick={() => dispatch(Collection())}
+                />
+                {/* 2 */}
+                <CustomButton
+                  btnText={"accessories"}
+                  icon={
+                    <DropDownIcon
+                      size={30}
+                      className="-rotate-90 bg-gray-300 p-2 rounded-full hover:bg-black hover:text-white"
+                    />
+                  }
+                  AdditionalStyle="!w-full !justify-between "
+                  onClick={() => dispatch(ToggleEvent())}
+                />
+                {/* 3 */}
+                <CustomLink to="/collections/flash-sale">
+                  <CustomButton btnText={"clearance sale"} />
+                </CustomLink>
+              </div>
 
-            <div>
-              <SocialLinks/>
-              <hr className="my-5"/>
-              <CustomLink to="/account" styles="font-semibold text-center text-xl my-2">
-                Account
-              </CustomLink>
-            </div>
+              <div>
+                <SocialLinks />
+                <hr className="my-5" />
+                <CustomLink
+                  to="/account"
+                  styles="font-semibold text-center text-xl my-2"
+                >
+                  Account
+                </CustomLink>
+              </div>
+ 
             </div>
           </div>
         </div>
@@ -267,7 +309,13 @@ const Navbar = () => {
                   className="font-mulish tracking-wider font-semibold text-[1.25rem] my-4 group cursor-pointer w-full"
                 >
                   {i.path ? (
-                    <CustomLink to={i.path} styles="group-hover:border-b">
+ 
+                    <CustomLink
+                      to={i.path}
+                      styles="group-hover:border-b"
+                      click={() => dispatch(Collection())}
+                    >
+ 
                       {i.label}
                     </CustomLink>
                   ) : (
@@ -299,7 +347,13 @@ const Navbar = () => {
 
                       {i.subCollection?.map((e, index) => (
                         <li key={index} className="my-4 ">
-                          <CustomLink to={e.path} styles="w-fit hover:border-b">
+ 
+                          <CustomLink
+                            click={() => dispatch(Collection())}
+                            to={e.path}
+                            styles="w-fit hover:border-b"
+                          >
+ 
                             {e.label}
                           </CustomLink>
                         </li>
@@ -385,23 +439,48 @@ const Navbar = () => {
           </div>
         </div>
       )}
-=======
-      {/* nav elements  */}
-      <div className=" hidden lg:flex gap-5 lg:pr-">
-        {navElements.map((i) => (
-          <div key={i.id} className="">
-            <CustomButton btnText={i.label} icon={i.icon} />
-          </div>
-        ))}
-      </div>
->>>>>>> main
+ 
 
       {/* icons part  */}
-      <div className="  flex items-center gap-4">
-        <SearchIcon className="hidden md:flex" />
+      <div className="  flex items-center gap-4 *:cursor-pointer">
+        <span onClick={() => dispatch(Search())}>
+          <SearchIcon className="hidden md:flex" />
+        </span>
         <UserIcon className="hidden md:flex" />
         <CartIcon />
       </div>
+
+      {/* search bar  */}
+      {searchBar && (
+        <div
+          className="bg-black/20  h-full w-full fixed top-0 left-0 flex items-center md:justify-start"
+          onClick={() => dispatch(Search())}
+        >
+          <div
+            className="text-black p-11 absolute right-0 bg-white  overflow-auto h-[95%] m-auto w-[90%] md:w-1/2 md:mr-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="border-b-2 flex justify-between">
+              <input
+                type="text"
+                placeholder="Search for ..."
+                className="w-full py-3 text-xl font-medium font-mulish outline-none"
+              />
+              <CustomButton
+                icon={
+                  <CloseIcon
+                    size={24}
+                    className="transition-transform duration-300 group-hover:!rotate-90 "
+                  />
+                }
+                onClick={() => dispatch(Search())}
+              />{" "}
+            </div>
+          </div>
+        </div>
+      )}
+ 
+ 
     </div>
   );
 };

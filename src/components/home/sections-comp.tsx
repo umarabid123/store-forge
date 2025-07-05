@@ -1,11 +1,10 @@
 "use client";
 import React, { useRef } from "react";
 import CustomButton from "../shared/common/custom-button";
-<<<<<<< ahmad-raza
+ 
 import { ArrowIcon, DropDownIcon, UserIcon } from "@/svgs/header-svg-grabber";
-=======
-import { DropDownIcon, UserIcon } from "@/svgs/header-svg-grabber";
->>>>>>> main
+ 
+ 
 import ProductCard from "../shared/common/product-card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -13,27 +12,37 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from "../shared/container";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-<<<<<<< ahmad-raza
+ 
 import { setIndex } from "@/redux-store/slices/toggle-arrow";
 import CustomLink from "../shared/common/custom-link";
 import { Products } from "@/data";
+import SectionTitle from "../shared/common/section-title";
+ 
 
 interface SectionProps {
   category?: string;
   sectionTitle?: string;
   bannerImage1?: string;
   bannerImage2?: string;
-  bannerVideo ?: string,
-  moreStyle ?: string,
-  iconStyle ?: string
+ 
+  bannerVideo?: string;
+  moreStyle?: string;
+  iconStyle?: string;
 }
 
-const SectionComp = ({ category, sectionTitle, bannerImage1, bannerImage2 ,moreStyle , iconStyle  }: SectionProps) => {
-=======
+const SectionComp = ({
+  category,
+  sectionTitle,
+  bannerImage1,
+  bannerImage2,
+  moreStyle,
+  iconStyle,
+}: SectionProps) => {
+ 
 import { setIndex } from "@/redux-store/slices/toggle";
 
 const SectionComp = () => {
->>>>>>> main
+ 
   const sliderRef = useRef<any>(null);
   const slides = useSelector((state: any) => state.slider.startIndex);
   const dispatch = useDispatch();
@@ -53,11 +62,12 @@ const SectionComp = () => {
     ],
   };
 
-<<<<<<< ahmad-raza
+ 
   const filteredData = Products.filter((p) => p.category === category);
 
   return (
-    <div  >
+    <div>
+ 
       {/* Top banner image */}
       {bannerImage1 && (
         <div className="h-[560px] 2xl:h-[800px] relative">
@@ -82,32 +92,15 @@ const SectionComp = () => {
         </div>
       )}
 
-
-
+ 
       {sectionTitle && (
-        <Container parentStyle={`pl-5 lg:pl-14 bg-white !pr-0 py-10 bg-white text-black relative ${moreStyle}`}>
-         
+        <Container
+          parentStyle={` bg-white !pr-0  bg-white text-black relative ${moreStyle}`}
+        >
           {/* Section title */}
-          <div className="flex md:items-center gap-4 flex-col md:flex-row justify-start md:justify-between md:mr-12">
-            <span className="text-xl font-optimanova first-letter:uppercase">
-              {sectionTitle}
-            </span>
-
-            {/* view all btn  */}
-            <CustomLink to="#link">
-              <span className="group flex gap-2 cursor-pointer">
-                <CustomButton
-                  btnText="View all"
-                  AdditionalStyle="!normal-case !font-normal group-hover:border-b "
-                />
-                <DropDownIcon
-                  stroke={3}
-                  size={12}
-                  className={`-rotate-90 group-hover:bg-black group-hover:text-white bg-zinc-200 rounded-full p-1.5 h-6 w-6 ${iconStyle}`}
-                />
-              </span>
-            </CustomLink>
-          </div>
+          <SectionTitle title={sectionTitle} iconStyles={iconStyle}/>
+         
+ 
 
           {/* Slider */}
           <div className="my-6 md:mt-12">
@@ -116,7 +109,9 @@ const SectionComp = () => {
               {...settings}
               afterChange={(index) => dispatch(setIndex(index))}
             >
-              {filteredData.map((i, index) => (
+ 
+              {filteredData.slice(0, 8).map((i, index) => (
+ 
                 <div key={index} className="">
                   <ProductCard product={i} />
                 </div>
@@ -151,10 +146,12 @@ const SectionComp = () => {
                 />
               </button>
               <button
-                disabled={slides >= filteredData.length - visiableSlide}
+ 
+                disabled={slides >= 8 - visiableSlide}
                 onClick={() => sliderRef.current?.slickNext()}
                 className={`h-12 w-12 -rotate-90 text-center flex justify-center items-center group ${
-                  slides >= filteredData.length - visiableSlide
+                  slides >= 8 - visiableSlide
+ 
                     ? "border-gray-400 text-gray-600 cursor-not-allowed"
                     : "cursor-pointer"
                 }`}
@@ -173,7 +170,7 @@ const SectionComp = () => {
           </div>
         </Container>
       )}
-=======
+ 
   const images = [
     "/assets/eid1.webp",
     "/assets/eid1.webp",
@@ -257,7 +254,7 @@ const SectionComp = () => {
           </div>
         </div>
       </Container>
->>>>>>> main
+ 
     </div>
   );
 };

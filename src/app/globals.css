@@ -9,7 +9,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-redText : #E44242;
-<<<<<<< ahmad-raza
+ 
   --color-grayed : #000000B3
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -20,12 +20,8 @@
 
 @theme {
   --font-optimanova: 'Optima nova LT Pro', Optima, Candara, 'Noto Sans', sans-serif;
-=======
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-mulish : var(--font-mulish)
-  
->>>>>>> main
+ 
+ 
 }
 
 @media (prefers-color-scheme: dark) {

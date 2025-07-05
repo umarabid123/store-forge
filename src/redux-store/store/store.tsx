@@ -1,18 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-<<<<<<< ahmad-raza
+ 
 import ToggleArrow from "@/redux-store/slices/toggle-arrow"
-=======
-import sliderSlice from "@/redux-store/slices/toggle"
->>>>>>> main
+import filterSlice from "@/redux-store/slices/filter-slice";
+ 
 
 
 const store = configureStore({
   reducer: {
-<<<<<<< ahmad-raza
-    slider: ToggleArrow
-=======
-    slider: sliderSlice
->>>>>>> main
+ 
+    slider: ToggleArrow,
+    filter: filterSlice
+ 
   } // Add your reducers here
 });
 
