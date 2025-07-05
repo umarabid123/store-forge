@@ -1,20 +1,24 @@
+ 
 "use client";
 import Image from "next/image";
 import React from "react";
 import CustomButton from "@/components/shared/common/custom-button";
 import CloseIcon, {
+ 
   CartIcon,
   DropDownIcon,
   MenuIcon,
   SearchIcon,
   UserIcon,
 } from "@/svgs/header-svg-grabber";
+ 
 import { useSelector, useDispatch } from "react-redux";
 import {
   Collection,
   ToggleEvent,
   SubCollection,
   MenubarItems,
+ 
   Search,
   setQuery,
   setResults,
@@ -36,15 +40,18 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
 
   const dispatch = useDispatch();
   const pathname = usePathname();
+ 
 
   const collectionsElements = [
     {
       label: "New Arrivals",
+ 
       path: "/collections/s12025",
     },
     {
       label: "Fragrances",
       path: "/collections/perfume-bodyworks",
+ 
     },
     {
       label: "Polo & Tees",
@@ -54,12 +61,14 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
       label: "Shirts",
       icon: true,
       subCollection: [
+ 
         { id: 1, label: "Casual Shirts", path: "/collections/casual-shirts" },
         {
           id: 2,
           label: "Formal Shirts",
           path: "/collections/semi-formal-full-sleeve-shirts",
         },
+ 
       ],
     },
     {
@@ -68,18 +77,22 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
     },
     {
       label: "Semi Formal Coats",
+ 
       path: "/collections/casual-coats",
+ 
     },
     {
       label: "Afroz",
       icon: true,
       subCollection: [
+ 
         {
           id: 1,
           label: "Kurta Collection",
           path: "/collections/shalwar-kameez",
         },
         { id: 2, label: "Waistcoats", path: "/collections/waist-coats" },
+ 
       ],
     },
     {
@@ -88,6 +101,7 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
       subCollection: [
         { id: 1, label: "Trousers", path: "/collections/trousers" },
         { id: 2, label: "Jeans", path: "/collections/jeans" },
+ 
       ],
     },
     {
@@ -117,14 +131,17 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
   ];
 
   return (
+ 
     <div
       className={`py-7 px-2 sm:px-8 relative z-40 md:px-10 bg-transperant text-black flex items-center justify-between ${navParent}`}
     >
+ 
       {/* menu icons shown on small screens */}
       <div className="flex gap-2 lg:hidden">
         <span onClick={() => dispatch(MenubarItems())}>
           <MenuIcon />
         </span>
+ 
         <span onClick={() => dispatch(Search())}>
           <SearchIcon className=" md:hidden" />
         </span>
@@ -151,6 +168,22 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
         )}
       </CustomLink>
 
+ 
+        <SearchIcon className=" md:hidden" />
+      </div>
+
+      {/* logo   */}
+      <div className="w-44 sm:h-12 sm:w-54 ">
+        <Image
+          src={"./logo.svg"}
+          alt="forge"
+          height={110}
+          width={210}
+          className="h-full w-full"
+        />
+      </div>
+
+ 
       {/* nav links for lg screens    */}
       <div className=" hidden lg:flex gap-5 ">
         {/* 1 */}
@@ -166,9 +199,11 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
           onClick={() => dispatch(ToggleEvent())}
         />
         {/* 3 */}
+ 
         <CustomLink to="/collections/flash-sale">
           <CustomButton btnText={"clearance sale"} />
         </CustomLink>
+ 
       </div>
 
       {/* menbar for small screeens  */}
@@ -196,6 +231,7 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
 
             <div className=" flex flex-col justify-between h-full pb-10">
               <div className="*:my-5">
+ 
                 {/* 1 */}
                 <CustomButton
                   btnText={"collections"}
@@ -236,6 +272,7 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
                   Account
                 </CustomLink>
               </div>
+ 
             </div>
           </div>
         </div>
@@ -272,11 +309,13 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
                   className="font-mulish tracking-wider font-semibold text-[1.25rem] my-4 group cursor-pointer w-full"
                 >
                   {i.path ? (
+ 
                     <CustomLink
                       to={i.path}
                       styles="group-hover:border-b"
                       click={() => dispatch(Collection())}
                     >
+ 
                       {i.label}
                     </CustomLink>
                   ) : (
@@ -308,11 +347,13 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
 
                       {i.subCollection?.map((e, index) => (
                         <li key={index} className="my-4 ">
+ 
                           <CustomLink
                             click={() => dispatch(Collection())}
                             to={e.path}
                             styles="w-fit hover:border-b"
                           >
+ 
                             {e.label}
                           </CustomLink>
                         </li>
@@ -398,6 +439,7 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
           </div>
         </div>
       )}
+ 
 
       {/* icons part  */}
       <div className="  flex items-center gap-4 *:cursor-pointer">
@@ -437,6 +479,8 @@ const Navbar = ({ navParent }: { navParent?: string }) => {
           </div>
         </div>
       )}
+ 
+ 
     </div>
   );
 };

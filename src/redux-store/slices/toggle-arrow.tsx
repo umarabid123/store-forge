@@ -9,10 +9,12 @@ const ToggleArrow = createSlice({
     colectionToggle: false,
     menuBar: false,
     subCollection: null,
+ 
     search : false ,
     query : "" ,
     results : [],
     // sortby: false,
+ 
   },
 
   reducers: {
@@ -45,6 +47,7 @@ const ToggleArrow = createSlice({
     ToggleEvent: (state) => {
       state.AccToggle = !state.AccToggle;
     },
+ 
 
     Search : (state)=>{
         state.search = !state.search
@@ -63,6 +66,7 @@ const ToggleArrow = createSlice({
     // },
 
  
+ 
   },
 });
 
@@ -74,8 +78,10 @@ export const {
   Collection,
   SubCollection,
   MenubarItems,
+ 
   Search,
   setQuery,
   setResults,
+ 
 } = ToggleArrow.actions;
 export default ToggleArrow.reducer;

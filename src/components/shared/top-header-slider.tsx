@@ -19,9 +19,11 @@ const TopHeaderSlider = () => {
   pauseOnHover: false,
   variableWidth: true,
 };
+ 
 
   return (
     <div className="h-14 flex items-center  overflow-hidden bg-white">
+ 
       <Slider {...settings}>
         {topHeaderSlider.map((item, index) => (
           <div
@@ -39,4 +41,6 @@ const TopHeaderSlider = () => {
   );
 };
 
+ 
 export default TopHeaderSlider;
+ 
