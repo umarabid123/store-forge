@@ -1,11 +1,11 @@
 import React from "react";
-import Contacts from "./common/contacts";
-import Container from "./container";
-import CustomButton from "./common/custom-button";
+import Contacts from "@/components/shared/common/contacts";
+import Container from "@/components/shared/container";
+import CustomButton from "@/components/shared/common/custom-button";
 import { DropDownIcon } from "@/svgs/header-svg-grabber";
  
 import Image from "next/image";
-import SocialLinks from "./common/social-links";
+import SocialLinks from "@/components/shared/common/social-links";
 
 const Footer = () => {
  
