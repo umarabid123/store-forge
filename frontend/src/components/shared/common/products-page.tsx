@@ -1,7 +1,6 @@
 "use client";
 
 import ProductCard from "@/components/shared/common/product-card";
-import TitleSlider from "@/components/shared/common/title-slider";
 import Container from "@/components/shared/container";
 import { Products } from "@/data";
 import Image from "next/image";
@@ -20,7 +19,16 @@ interface PageProps {
 }
 
 const ProductsPage: React.FC<PageProps> = ({ filterType }) => {
-  const openFilter = useSelector((state: any) => state.filter.open);
+  // Define RootState type based on your redux store structure
+  interface RootState {
+    filter: {
+      open: boolean;
+    };
+    // add other slices if needed
+  }
+
+  const openFilter = useSelector((state: RootState) => state.filter.open);
+  
   const [sortedProducts, setSortedProducts] = React.useState(Products);
 
   const dispatch = useDispatch();

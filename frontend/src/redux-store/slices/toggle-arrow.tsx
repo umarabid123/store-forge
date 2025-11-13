@@ -1,3 +1,4 @@
+import { Products } from "@/data";
 import { createSlice } from "@reduxjs/toolkit";
 
 const ToggleArrow = createSlice({
@@ -9,12 +10,11 @@ const ToggleArrow = createSlice({
     colectionToggle: false,
     menuBar: false,
     subCollection: null,
- 
-    search : false ,
-    query : "" ,
-    results : [],
-    // sortby: false,
- 
+    search: false,
+    query: "",
+    results: [],
+    products: Products, // Assuming Products is an array of product objects
+    searchTerm: "",
   },
 
   reducers: {
@@ -47,25 +47,23 @@ const ToggleArrow = createSlice({
     ToggleEvent: (state) => {
       state.AccToggle = !state.AccToggle;
     },
- 
 
-    Search : (state)=>{
-        state.search = !state.search
+    Search: (state) => {
+      state.search = !state.search;
     },
 
-    setQuery : (state , action)=>{
-      state.query = action.payload
+    setQuery: (state, action) => {
+      state.query = action.payload;
     },
 
-    setResults : (state , action)=>{
-      state.results = action.payload
+    setResults: (state, action) => {
+      state.results = action.payload;
     },
 
-    // setSortBy: (state) => {
-    //   state.sortby = !state.sortby;
-    // },
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+    }
 
- 
  
   },
 });
@@ -78,10 +76,9 @@ export const {
   Collection,
   SubCollection,
   MenubarItems,
- 
+  setSearchTerm,
   Search,
   setQuery,
   setResults,
- 
 } = ToggleArrow.actions;
 export default ToggleArrow.reducer;

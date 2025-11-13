@@ -19,13 +19,13 @@ const page = () => {
 
           <p className="text-center font-mulish md:w-3/4 mx-auto  font-normal">
             Shop from wide range of Casual Trousers for men. Charcoal brings you
-            the best men's casual slacks designs in its signature style. Choose
-            from our men's smart casual trousers including Interlock trousers,
+            the best mens casual slacks designs in its signature style. Choose
+            from our mens smart casual trousers including Interlock trousers,
             Cargo trousers, sweatpants, slim-cut denim pants, jogger pants and
             many more.
             <br />
             <br />
-            Feel at ease by wearing Men's Casual Trousers. Charcoal brings you
+            Feel at ease by wearing Mens Casual Trousers. Charcoal brings you
             the best Casual Trouser designs with comfy fabric in its signature
             style. Dress down with our selection of Interlock trousers, Cargo
             trousers, jogger trousers and many more. Free Shipping is available

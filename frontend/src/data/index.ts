@@ -7,8 +7,8 @@ interface AllProps {
   category?: string;
   slug?: string;
   title?: string;
-  currentPrice?: Number;
-  oldPrice?: Number;
+  currentPrice?: number;
+  oldPrice?: number;
   img1?: string;
   img2?: string;
 }
