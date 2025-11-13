@@ -6,7 +6,7 @@ import {
   WhatsAppIcon,
   YouTube,
 } from "@/svgs/social-svg-grabber";
-import CustomLink from './custom-link';
+import CustomLink from '@/components/shared/common/custom-link';
 
 
 const SocialLinks = () => {
