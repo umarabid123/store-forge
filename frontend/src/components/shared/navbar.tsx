@@ -23,10 +23,9 @@ import {
   setQuery,
   setResults,
 } from "@/redux-store/slices/toggle-arrow";
-import CustomLink from "./common/custom-link";
-import SocialLinks from "./common/social-links";
+import CustomLink from "@/components/shared/common/custom-link";
+import SocialLinks from "@/components/shared/common/social-links";
 import { usePathname } from "next/navigation";
-import path from "path";
 
 const Navbar = ({ navParent }: { navParent?: string }) => {
   const menuitems = useSelector((state: any) => state.slider.menuBar);
